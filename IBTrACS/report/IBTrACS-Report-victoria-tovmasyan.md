@@ -10,7 +10,7 @@ IBTrACS-Report-victoria-tovmasyan.Rmd
 In order to efficiently organize and later analyze our data, I used bash
 to download individual .csv files of IBTrACS Storms Data from 6
 different seasons: 2010, 2011, 2012, 2013, 2014, and 2015. These files
-can be found in the workout1 folder labeled
+can be found in the IBTrACS folder labeled
 `data`.
 
 ``` bash
@@ -24,7 +24,7 @@ curl -O "ftp://eclipse.ncdc.noaa.gov/pub/ibtracs/v03r10/all/csv/year/Year.2015.i
 
 After this, I compiled the first twelve columns (and all rows) of each
 season into one central file named `ibtracs-2010-2015.csv`, which can be
-found in the workout1 folder labeled `data`. This was done to make the
+found in the IBTrACS folder labeled `data`. This was done to make the
 storms data from all seasons easily accessible from one .csv
 file.
 
@@ -38,7 +38,7 @@ cut -f 1-12 -d "," Year.2014.ibtracs_all.v03r10.csv | tail -n +4 >> ibtracs-2010
 cut -f 1-12 -d "," Year.2015.ibtracs_all.v03r10.csv | tail -n +4 >> ibtracs-2010-2015.csv
 ```
 
-*This code can be viewed in the workout1 folder `code` in the file named
+*This code can be viewed in the IBTrACS folder `code` in the file named
 `make-ibtracs-data-script.txt`.*
 
 ## Preliminary Data Analysis and Mapping
@@ -47,7 +47,7 @@ Using the newly created `ibtracs-2010-2015.csv`, I began conducting some
 preliminary data analysis.
 
 *All of the following files can be found in the `output` folder. The
-code can be viewed in the workout1 folder `code` in the file named
+code can be viewed in the IBTrACS folder `code` in the file named
 `make-ibtracs-data-script.txt`.*
 
 ### Records Per Year
@@ -87,7 +87,7 @@ ggplot(dat,aes(x=season))+geom_bar()
 
 ![](../images/seasonCount-1.png)<!-- -->
 
-That’s more like it\! Now we can very clearly, easliy, and confidently
+That’s more like it\! Now we can very clearly, easily, and confidently
 convey the answers to a few questions:
 
 **Which season had the fewest storm records?** The 2010 season.  
